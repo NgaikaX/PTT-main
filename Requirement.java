@@ -56,10 +56,9 @@ public class Requirement {
     @Override
     public String toString() {
         return "classNumber=" + classNumber +
-                ", major='" + major + '\'' +
+                ", major=" + major +
                 ", majorLevel=" + majorLevel +
                 ", PTTNumber=" + PTTNumber +
-                ", assigned=" + assigned +
-                '}';
+                ", assigned=" + assigned;
     }
 }

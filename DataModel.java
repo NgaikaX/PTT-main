@@ -6,11 +6,10 @@ public class DataModel {
     private List<Director> directors = new ArrayList<>();
     private List<Administrator> administrators = new ArrayList<>();
     private List<PTT> PTTs = new ArrayList<>();//teachers
-    private List<PTT> trainingList = new ArrayList<>();//teachers
+    private List<PTT> trainingList = new ArrayList<>();
 
 
     public DataModel() {
-
     }
 
     public List<Director> getDirectors() {
@@ -47,7 +46,6 @@ public class DataModel {
 
 
     public List<Requirement> getTeachingRequirements() {
-        // 返回教学要求列表，这里简化为返回一个空的列表
        return requirementList;
     }
 

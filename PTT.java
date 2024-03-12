@@ -3,18 +3,20 @@ import java.util.List;
 
 public class PTT {
     private int ID;
+    private String password;
     private String major;//Chinese Math English
     private int majorLevel;
     private int classNumber;
     private boolean needTraining;
 
 
-    public PTT(int ID, String major, int majorLevel) {
+    public PTT(int ID, String password, String major, int majorLevel) {
         this.ID = ID;
+        this.password = password;
         this.major = major;
         this.majorLevel = majorLevel;
         // the teacher need training if not at max skill level at 5
-        this.needTraining = (majorLevel < 5);
+        this.needTraining = (majorLevel < 5);//TODO: ???
     }
 
     // Getters and setters for each ptt part
@@ -67,13 +69,12 @@ public class PTT {
 
     @Override
     public String toString() {
-        return "PTT{" +
+        return "PTT " +
                 "ID=" + ID +
-                ", major=" + major  +
+                ", major=" + major +
                 ", majorLevel=" + majorLevel +
                 ", classNumber=" + classNumber +
-                ", needTraining=" + needTraining +
-                '}';
+                ", needTraining=" + needTraining;
     }
 }
 

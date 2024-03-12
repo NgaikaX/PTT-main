@@ -1,0 +1,7 @@
+Director, 1, directorpassword, 1
+Director, 2, directorpassword, 2
+Administrator, 3, admin
+PTT, 4, teacherpassword, Math, 2, false
+PTT, 5, teacherpassword, English, 1, false
+Requirement, 1, Math, 2, 2, false
+Requirement, 2, English, 1, 1, false
