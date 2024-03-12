@@ -12,7 +12,7 @@ public class AdministratorPage {
                     "1. View the teaching requirements\n" +
                     "2. View the part-time teachers information\n" +
                     "3. Assign class number and training to the teacher\n" +
-                    "4. Assign training to the part time teacher\n" +
+                    //"4. Assign training to the part time teacher\n" +
                     "5. View all the available training\n" +
                     "6. Leave");
             System.out.println("----------------Enter a number below----------------");
@@ -100,7 +100,7 @@ public class AdministratorPage {
 
             Requirement selectedRequirement = dataModel.getRequirementList().get(requirementNum);
             System.out.print("You will handle this requirement: " + "Requirement " + requirementNum);//TODO: 需要判断逻辑？
-            System.out.print(selectedRequirement);
+            System.out.print(selectedRequirement + "\n");
             System.out.println();
 
             //assign teachers based on the number of the requirement
@@ -119,7 +119,7 @@ public class AdministratorPage {
 
                 //check if there is enough teachers
                 if(validTeachers.isEmpty()){
-                    System.out.println("There are no relevant teachers");
+                    System.out.println("Sorry, there are no relevant teachers");
                     System.out.println();
                     break;
                 }else{
@@ -146,7 +146,7 @@ public class AdministratorPage {
                         }
                         System.out.println("successfully assign a teacher to class " + selectedRequirement.getClassNumber());
                     }else{
-                        System.out.println("sorry the teacher is not exist, please enter a correct ID");
+                        System.out.println("Sorry the teacher is not exist, please enter a correct ID");
                         continue;
                     }
                     //check if finish the reqirement:
@@ -156,8 +156,6 @@ public class AdministratorPage {
                     }
                 }
             }
-
-
 
             //go back
             System.out.println("------------Enter -1 to go back to Administrator page or 0 to continue ------------");
@@ -171,7 +169,7 @@ public class AdministratorPage {
         }
     }
 
-    public static void optionFour(DataModel dataModel, Administrator administrator) {
+    /*public static void optionFour(DataModel dataModel, Administrator administrator) {
         boolean back = false;
         while (!back) {
             Scanner scanner = new Scanner(System.in);
@@ -203,7 +201,7 @@ public class AdministratorPage {
                 //addTraining(dataModel, PTTID, training);
             }
         }
-    }
+    }*/
 
 
     public static void optionFive(DataModel dataModel, Administrator administrator) {
