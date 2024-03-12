@@ -136,8 +136,10 @@ public class AdministratorPage {
                             System.out.println("----------------Enter 1 stands for yes, 2 stands for no----------------");
                             int trainingOrNot = scanner.nextInt();
                             scanner.nextLine();
+
                             if(trainingOrNot == 1){
                                 selectedPTT.setNeedTraining(true);
+                                dataModel.addTrainingList(selectedPTT);
                             }else if(trainingOrNot == 2){
                                 break;
                             }
@@ -173,6 +175,11 @@ public class AdministratorPage {
         boolean back = false;
         while (!back) {
             Scanner scanner = new Scanner(System.in);
+            System.out.println("Following are part-time teachers that need training:");
+            for (int i = 0; i < dataModel.getTrainingList().size(); i++) {
+                PTT trainingPtt = dataModel.getTrainingList().get(i);
+                System.out.println(trainingPtt);
+            }
             System.out.println("You are assigning a training to the part-time teacher:");
             System.out.println("----------------Enter a ID of teacher below----------------");
 

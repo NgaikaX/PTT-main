@@ -112,5 +112,9 @@ public class DataModel {
     public void setTrainingList(List<PTT> trainingList) {
         this.trainingList = trainingList;
     }
+    public void addTrainingList(PTT ptt) {
+        this.trainingList.add(ptt);
+    }
+
 }
 
