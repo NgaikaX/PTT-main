@@ -12,9 +12,8 @@ public class AdministratorPage {
                     "1. View the teaching requirements\n" +
                     "2. View the part-time teachers information\n" +
                     "3. Assign class number and training to the teacher\n" +
-                    //"4. Assign training to the part time teacher\n" +
-                    "5. View all the available training\n" +
-                    "6. Leave");
+                    "4. View teachers needed to have training\n" +
+                    "5. Leave");
             System.out.println("----------------Enter a number below----------------");
             Scanner scanner = new Scanner(System.in);
             int option = scanner.nextInt();
@@ -26,10 +25,8 @@ public class AdministratorPage {
             } else if (option == 3) {
                 optionThree(dataModel, administrator);
             } else if (option == 4) {
-                //optionFour(dataModel, administrator);
-            } else if (option == 5) {
                 optionFive(dataModel, administrator);
-            } else if (option == 6) {
+            } else if (option == 5) {
                 Homepage.LoginPage(dataModel);
             } else {
                 System.out.println("Sorry, this is not a valid option, please enter a number from 1 to 6.");
@@ -168,41 +165,6 @@ public class AdministratorPage {
             }
         }
     }
-
-    /*public static void optionFour(DataModel dataModel, Administrator administrator) {
-        boolean back = false;
-        while (!back) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Following are part-time teachers that need training:");
-            for (int i = 0; i < dataModel.getTrainingList().size(); i++) {
-                PTT trainingPtt = dataModel.getTrainingList().get(i);
-                System.out.println(trainingPtt);
-            }
-            System.out.println("You are assigning a training to the part-time teacher:");
-            System.out.println("----------------Enter a ID of teacher below----------------");
-
-            int pttId = scanner.nextInt();//TODO：check error input
-            scanner.nextLine();
-
-            PTT selectedPTT = dataModel.getPttById(pttId);
-            if (selectedPTT != null) {
-                System.out.println("successfully assign a teacher to class " + selectedPTT);
-            }else{
-                System.out.println("sorry the teacher is not exist, please enter a correct ID");
-            }
-            // checkPTT(dataModel, PTTID);
-
-
-            System.out.println("----------------Enter a training below or enter -1 to leave and go back to Administrator Panel----------------");
-            String training = scanner.nextLine();//TODO：check error input
-            if (training.equals("-1")) {
-                back = true;
-            } else {
-                //addTraining(dataModel, PTTID, training);
-            }
-        }
-    }*/
-
 
     public static void optionFive(DataModel dataModel, Administrator administrator) {
         boolean back = false;
