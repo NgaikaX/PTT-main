@@ -38,7 +38,7 @@ public class AdministratorPage {
     public static void optionOne(DataModel dataModel, Administrator administrator) {
         boolean back = false;
 
-        System.out.println("You are viewing the information of part-time teachers");
+        System.out.println("You are viewing the teaching requirements");
         System.out.println("--------------------------");
         for (int i = 0; i < dataModel.getTeachingRequirements().size(); i++) {
             Requirement requirement = dataModel.getTeachingRequirements().get(i);
@@ -112,7 +112,6 @@ public class AdministratorPage {
                         validTeachers.add(ptt);
                     }
                 }
-                System.out.println();
 
                 //check if there is enough teachers
                 if(validTeachers.isEmpty()){
@@ -137,11 +136,13 @@ public class AdministratorPage {
                             if(trainingOrNot == 1){
                                 selectedPTT.setNeedTraining(true);
                                 dataModel.addTrainingList(selectedPTT);
+                                System.out.println("successfully assign a teacher to class " + selectedRequirement.getClassNumber());
                             }else if(trainingOrNot == 2){
                                 break;
                             }
+                        }else{
+                            System.out.println("successfully assign a teacher to class " + selectedRequirement.getClassNumber());
                         }
-                        System.out.println("successfully assign a teacher to class " + selectedRequirement.getClassNumber());
                     }else{
                         System.out.println("Sorry the teacher is not exist, please enter a correct ID");
                         continue;

@@ -74,8 +74,6 @@ class FileManager {
         }
         System.out.println("Data saved successfully.");
     }
-
-
 }
 
 
