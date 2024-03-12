@@ -15,15 +15,14 @@ public class Homepage {
             String password = input.nextLine();
 
             if ((dataModel.administratorLogin(id, password, dataModel)) != null) {
-                 AdministratorPage.printAdministratorPage(dataModel, dataModel.administratorLogin(id, password, dataModel));
+                AdministratorPage.printAdministratorPage(dataModel, dataModel.administratorLogin(id, password, dataModel));
                 success=true;
             } else if ((dataModel.directorLogin(id, password, dataModel)) != null) {
-                new DirectorPage().printDirectorPage(dataModel, dataModel.directorLogin(id, password, dataModel));
+                DirectorPage.printDirectorPage(dataModel, dataModel.directorLogin(id, password, dataModel));
                 success=true;
             }else{
                 System.out.println("There is no User");
             }
-
         }
 
     }

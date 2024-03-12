@@ -2,13 +2,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DirectorPage {
-    private final Scanner scanner;
+    private static Scanner scanner;
 
     public DirectorPage() {
         this.scanner = new Scanner(System.in);
     }
 
-    public void printDirectorPage(DataModel dataModel, Director director) {
+    public static void printDirectorPage(DataModel dataModel, Director director) {
         System.out.println("-------------------------");
         System.out.println("Please select an option:");
         System.out.println("0. Add a new requirement");
@@ -33,7 +33,7 @@ public class DirectorPage {
         }
     }
 
-    private void addRequirement(DataModel dataModel, Director director) {
+    private static void addRequirement(DataModel dataModel, Director director) {
         System.out.println();
         System.out.println("-------------------------");
 
@@ -48,7 +48,7 @@ public class DirectorPage {
         int numberOfTeachers = scanner.nextInt();
         scanner.nextLine();
 
-        Requirement requirement=new Requirement(director.getClassNumber(),major,level,numberOfTeachers,false);
+        Requirement requirement = new Requirement(director.getClassNumber(), major, level, numberOfTeachers, false);
         dataModel.addRequirement(requirement);
 
         System.out.println("-------------------------");
@@ -59,8 +59,7 @@ public class DirectorPage {
     }
 
 
-
-    private void listRequirement(DataModel dataModel, Director director) {
+    private static void listRequirement(DataModel dataModel, Director director) {
         System.out.println();
         List<Requirement> requirementList = dataModel.getRequirementList();
         for (int i = 0; i < requirementList.size(); i++) {
@@ -85,7 +84,7 @@ public class DirectorPage {
 
         switch (input) {
             case "0":
-                updateRequirement(dataModel,director);
+                updateRequirement(dataModel, director);
                 break;
             case "1":
                 printDirectorPage(dataModel, director);
@@ -98,7 +97,7 @@ public class DirectorPage {
         }
     }
 
-    private void updateRequirement(DataModel dataModel, Director director) {
+    private static void updateRequirement(DataModel dataModel, Director director) {
         System.out.println("-------------------------");
         System.out.println("Please enter the number of requirement you want to update:");
         int updateNumber = scanner.nextInt();
@@ -117,12 +116,12 @@ public class DirectorPage {
         scanner.nextLine();
         System.out.println("-------------------------");
 
-        Requirement requirement=new Requirement(director.getClassNumber(),major,level,numberOfTeachers,false);
-        dataModel.updateRequirementList(updateNumber,requirement);
+        Requirement requirement = new Requirement(director.getClassNumber(), major, level, numberOfTeachers, false);
+        dataModel.updateRequirementList(updateNumber, requirement);
         System.out.println("Updated successfully!");
         System.out.println("-------------------------");
 
-        listRequirement(dataModel,director);
+        listRequirement(dataModel, director);
     }
 
 

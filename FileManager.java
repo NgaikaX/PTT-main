@@ -6,12 +6,8 @@ class FileManager {
 
     private String FilePath = "Data.txt";
 
-
-    // 从文件加载数据到DataModel
-
+    //load data from file to DataModel
     public void readData(DataModel dataModel) {
-        //DataModel dataModel = new DataModel();
-
         try (BufferedReader br = new BufferedReader(new FileReader(FilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
