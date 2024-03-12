@@ -33,7 +33,7 @@ public class AdministratorPage {
             } else if (option == 6) {
                 back = true;
             } else {
-                System.out.println("Sorry, this is not a valid option, please enter a number from 1 to 6.");//TODO:error input
+                System.out.println("Sorry, this is not a valid option, please enter a number from 1 to 6.");
             }
         }
     }
@@ -73,8 +73,8 @@ public class AdministratorPage {
         while (!black) {
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("You are assigning a teacher to a class, please select a requirement to assign:");
-            int requirementNum = scanner.nextInt();
+            System.out.println("You are assigning a teacher to a class, please select a class number to check the requirement:");
+            int classNum = scanner.nextInt();
             scanner.nextLine();
 
             Requirement selectedRequirement = dataModel.getRequirementList().get(requirementNum);

@@ -6,6 +6,7 @@ public class DataModel {
     private List<Director> directors = new ArrayList<>();
     private List<Administrator> administrators = new ArrayList<>();
     private List<PTT> PTTs = new ArrayList<>();//teachers
+    private List<PTT> trainingList = new ArrayList<>();//teachers
 
 
     public DataModel() {
@@ -43,7 +44,6 @@ public class DataModel {
     public void setRequirementList(List<Requirement> requirementList) {
         this.requirementList = requirementList;
     }
-
 
 
     public List<Requirement> getTeachingRequirements() {
@@ -97,7 +97,7 @@ public class DataModel {
         return null;
     }
     
-    
+
     public PTT getPttById(int id){
         for (PTT ptt : PTTs) {
             if(ptt.getID()==id){
