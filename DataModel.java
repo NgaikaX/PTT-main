@@ -105,5 +105,12 @@ public class DataModel {
         return null;
     }
 
+    public List<PTT> getTrainingList() {
+        return trainingList;
+    }
+
+    public void setTrainingList(List<PTT> trainingList) {
+        this.trainingList = trainingList;
+    }
 }
 
