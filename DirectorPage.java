@@ -2,11 +2,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DirectorPage {
-    private static Scanner scanner;
+    private static Scanner scanner= new Scanner(System.in);
 
-    public DirectorPage() {
-        this.scanner = new Scanner(System.in);
-    }
+
 
     public static void printDirectorPage(DataModel dataModel, Director director) {
         System.out.println("-------------------------");
